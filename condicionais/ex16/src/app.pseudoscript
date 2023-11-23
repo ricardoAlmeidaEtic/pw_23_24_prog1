@@ -1,0 +1,14 @@
+
+modelo Voto:
+    construtor():
+        Voto.idade = 0
+        
+    funcao start():
+        entrada("Digite a sua idade: ", Voto.idade)
+        verificarVoto(Voto.idade)
+        
+    funcao verificarVoto(idade):
+        se idade >= 16 :
+            imprime("O seu voto foi aprovado.")
+        senao:
+            imprime("O seu voto não foi aprovado, pois é menor de 16 anos de idade.")

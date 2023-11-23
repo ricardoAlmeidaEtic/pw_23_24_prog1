@@ -1,0 +1,24 @@
+modelo Bissexto:
+    construtor():
+        Bissexto.year = 0
+
+    funcao start():
+        entrada("Digite um ano: ", Bissexto.year)
+        yearVerification(Bissexto.year)
+        
+    #funcao que verifica se o ano é bissexto.
+
+    funcao yearVerification(year):
+        se year % 4 == 0:
+            imprime("O ano " + year + "é bissexto.")
+        senao:
+            imprime("O ano " + year + "não é bissexto.")
+
+
+        #_____________________CORREÇÃO___________________
+
+        se year % 4 == 0 && year % 100 != 0:
+            imprime("O ano " + year + "é bissexto.")
+        senao:
+            imprime("O ano " + year + "não é bissexto.")
+        

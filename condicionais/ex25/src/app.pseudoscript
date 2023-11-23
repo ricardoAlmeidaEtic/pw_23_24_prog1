@@ -1,0 +1,14 @@
+modelo RaizQuadrada:
+    construtor():
+        RaizQuadrada.numero = 0
+
+    funcao start():
+        entrada("Digite um numero: ", RaizQuadrada.numero)
+        verificarRaizQuadrada(RaizQuadrada.numero)
+        
+    funcao verificarRaizQuadrada(numero):
+        resultado = numero ** (1/2) 
+        se resultado > 0:
+            imprime("A raiz quadrada do numero introduzido é positivo.")
+        senao: 
+            imprime("A raiz quadrada do numero introduzido nao é positivo.")

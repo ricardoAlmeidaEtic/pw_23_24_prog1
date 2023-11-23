@@ -1,0 +1,34 @@
+
+modelo Potencia:
+    construtor():
+        Potencia.numero = 0
+        
+    funcao start():
+        entrada("Digite a sua numero: ", Potencia.numero)
+        verificarPotencia(Potencia.numero)
+        
+    funcao verificarPotencia(numero):
+        resultado = 0
+        index = 1
+        retorno = ""
+
+            enquanto resultado < numero
+                resultado = calcularPotencia(2,index)
+                
+                se resultado == numero:
+                    retorno = "O número " + numero " é potencia de 2."
+                
+                index = index + 1
+
+            se retorno.vazio():
+                    retorno = "O número " + numero " não é potencia de 2."
+
+    funcao calcularPotencia(numero,index):
+        index_func = 1
+        numero_func = numero
+
+            enquanto index_func <= index
+                numero = numero * numero_func
+                index_func = index_func + 1
+
+        retorno numero

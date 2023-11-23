@@ -1,0 +1,34 @@
+modelo Palindromo:
+    construtor():
+        Palindromo.palindromo = ""
+        Palindromo.palindromoArray = []
+        
+    funcao start():
+        entrada("Digite uma: ", Palindromo.palindromo)
+        verificarPalindromo(Palindromo.palindromo)
+        validarPalindromo(Palindromo.palindromoArray)
+        
+    funcao verificarPalindromo(palindromo):
+        index = 1
+        array = []
+
+        enquanto index <= palindromo.tamanho():
+            array.add(palindromo.letra(index))
+            index = index + 1
+
+        Palindromo.palindromoArray = array;
+
+    funcao validarPalindromo(palindromoArray):
+        normalArray_func = palindromoArray
+        reversedArray_func = palindromoArray.reversed()
+        error = false
+        index = 1
+
+        enquanto index <= palindromoArray.tamanho():
+            se normalArray_func[index] != reversedArray_func[index]:
+                error = true
+
+        se error: 
+            imprime("A palavra introduzida " + Palindromo.palindromo + " não é um palíndromo.")
+        senao: 
+            imprime("A palavra introduzida " + Palindromo.palindromo + " é um palíndromo.")

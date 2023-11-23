@@ -1,0 +1,27 @@
+
+modelo VogalConsoante:
+    construtor():
+        VogalConsoante.vogal = ["a", "e", "i", "o", "u"]
+        VogalConsoante.caracter = ""
+
+    funcao start():
+        entrada("Digite um caracter: ", VogalConsoante.caracter)
+        verificacaoVogalConsoante(VogalConsoante.caracter)
+        
+    #funcao que verifica se o caracter introduzido é vogal ou consoante.
+
+    funcao verificacaoVogalConsoante(caracter):
+        resultado = ""
+        
+        se caracter.isNumber():
+            resultado = "O caracter " + caracter + " é número."
+        senão:
+            cada elemento em VogalConsoante.vogal:
+                se caracter == elemento:
+                    resultado = "O caracter " + caracter + " é vogal."
+
+            se resultado.vazio():
+                resultado = "O caracter " + caracter + " é consoante."
+
+
+        imprime(resultado)

@@ -1,0 +1,25 @@
+modelo NISS:
+    construtor():
+        NISS.salary = 0.00
+        NISS.discount_a = 0.11 #discount if salary is less or equal to €1.100.00
+        NISS.discount_b = 0.27 #discount if salary is bigger than €1.100.00
+        
+    funcao start():
+        entrada("Digite o seu salario: ", NISS.salary)
+        verificarNISS(NISS.salary)
+        
+    funcao verificarNISS(salary):
+        resultado = 0
+        desconto = 0
+
+        se salary <= 1.100.00:
+            desconto = salary * NISS.discount_a
+            resultado = resultado - desconto
+
+            imprime("O salario " + salary + " levou um desconto de 11% (" + desconto + "), totalizando:" + resultado + ".")
+
+        senão salary > 1.100.00:
+            desconto = salary * NISS.discount_b
+            resultado = resultado - desconto
+
+            imprime("O salario " + salary + " levou um desconto de 27,5% (" + desconto + "), totalizando:" + resultado + ".")

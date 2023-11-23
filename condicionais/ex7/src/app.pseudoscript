@@ -1,0 +1,28 @@
+
+modelo Primos:
+    construtor():
+        Primos.numero = 0
+
+    funcao start():
+        entrada("Digite o número: ", Primos.numero)
+        verificacaoPrimos(Primos.numero)
+        
+    #funcao que verifica se o número introduzio é Primo.
+
+    funcao verificacaoPrimos(numero):
+        se numero % numero == 0 && numero % 1 == 0:
+            imprime("O número " + numero + " é Primo.")
+        senao:
+            imprime("O número " + numero + " não é Primo.")
+
+        #_____________________CORREÇÃO___________________
+
+        multiplosEncontrados = 0
+        cada numero em [2..x]:
+            se x % numero = 0:
+                multiplosEncontrados = multiplosEncontrados + 1
+
+        se multiplosEncontrados == 1:
+            imprime("O número " + numero + " é Primo.")
+        senao:
+            imprime("O número " + numero + " não é Primo.")

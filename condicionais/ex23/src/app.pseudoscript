@@ -1,0 +1,28 @@
+modelo Fibonacci:
+    construtor():
+        Fibonacci.numero = 0
+
+    funcao start():
+        entrada("Digite um numero: ", Fibonacci.numero)
+        verificarFibonacci(Fibonacci.numero)
+        
+    funcao verificarFibonacci(numero):
+        func_numb1 = 1
+        func_numb2 = 1
+        index = 1
+        resultado = 0
+        equal = false
+
+        enquanto resultado <= numero
+            resultado = func_numb1 + func_numb2
+
+            se resultado == numero
+                equal = true
+            
+            func_numb2 = func_numb1
+            func_numb1 = resultado
+
+        se equal: 
+            imprime("O numero introduzido " + Fibonacci.numero + " é um número de Fibonacci.")
+        senao: 
+            imprime("O numero introduzido " + Fibonacci.numero + " não é um número de Fibonacci.")

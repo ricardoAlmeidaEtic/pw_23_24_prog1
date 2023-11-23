@@ -1,0 +1,23 @@
+
+modelo Perfeito:
+    construtor():
+        Perfeito.numero = 0
+        
+    funcao start():
+        entrada("Digite um número: ", Perfeito.numero)
+        calcularPerfeito(Perfeito.numero)
+        
+    funcao calcularPerfeito(numero):
+        resultado = 0
+        index = 1
+
+            enquanto index <= Perfeito.numero:
+                se Perfeito.numero % index == 0:
+                    resultado = resultado + index
+                
+                index = index + 1
+
+            se resultado == Perfeito.numero:
+                imprime("O número " + Perfeito.numero + " é um número perfeito.")
+            senão:
+                imprime("O número " + Perfeito.numero + " não é um número perfeito.")

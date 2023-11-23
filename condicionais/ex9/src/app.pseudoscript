@@ -1,0 +1,20 @@
+
+modelo Discount:
+    construtor():
+        Discount.price = 0.00
+        Discount.discount = 0.1
+
+    funcao start():
+        entrada("Digite o preço do produto: ", Discount.price)
+        doDiscount(Discount.price, Discount.discount)
+        
+    #funcao que verifica se o preço é superior a 100,00 e caso assim seja aplica um desconto de 10%.
+
+    funcao doDiscount(price,discount):
+        resultado = 0.00
+        se Discount.price > 100.00:
+            resultado = price - (price * discount)
+        senão:
+            resultado = price
+
+        imprime("O preço final é de: " + resultado + " .")

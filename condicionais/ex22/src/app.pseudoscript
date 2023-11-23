@@ -1,0 +1,16 @@
+modelo AluguerCarro:
+    construtor():
+        AluguerCarro.taxaDia = 50.00
+        AluguerCarro.taxaQuilometro = 0.20
+        
+        AluguerCarro.dias = 0.20
+        AluguerCarro.quilometros = 0.20
+
+    funcao start():
+        entrada("Digite o numero de dias: ", AluguerCarro.dias)
+        entrada("Digite o numero de quilometro: ", AluguerCarro.quilometros)
+        verificarAluguerCarro(AluguerCarro.dias,AluguerCarro.quilometros)
+        
+    funcao verificarAluguerCarro(dias, quilometros):
+        resultado = (quilometros * AluguerCarro.taxaQuilometro) + (dias * AluguerCarro.taxaDia)
+        imprime("O valor total do aluguer é de:" + resultado)

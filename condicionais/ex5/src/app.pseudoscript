@@ -1,0 +1,48 @@
+
+modelo MediaNota:
+    construtor():
+        MediaNota.nota1 = 0
+        MediaNota.nota2 = 0
+        MediaNota.nota3 = 0
+
+    funcao start():
+        entrada("Digite a primeira nota: ", MediaNota.nota1)
+        entrada("Digite a segunda nota: ", MediaNota.nota2)
+        entrada("Digite a terceira nota: ", MediaNota.nota3)
+        verificacaoMedia(MediaNota.nota1, MediaNota.nota2, MediaNota.nota3)
+        
+    #funcao se a média das três notas é positiva ou negativa.
+
+    funcao verificacaoMedia(nota1,nota2,nota3):
+        #calculo e armazenamento da media das três notas
+        media = (nota1 + nota2 + nota3) / 3
+
+        se media >= 7:
+            imprime("O aluno tem media positiva.")
+        senao:
+            imprime("O aluno tem media negativa.")
+
+    
+    #_____________________CORREÇÃO___________________
+    
+    funcao somaDasNotas(notas --lista):
+        resultado = 0
+        cada nota em lista:
+            resultado = resultado + nota
+        retorna resultado
+
+    funcao calculaMedia(notas --lista):
+        #calculo e armazenamento da media das três notas
+        soma = somaDasNotas(notas)
+        media = soma/notas.tamanho
+        
+    notas = []
+    cada i em [1..3]:
+        entrada("coloca a {i}", x)
+        notas.adiciona(x)
+
+    media = calculaMedia(notas)
+    se media >= 7
+        imprime("Parabens! Aprovado.")
+    senao:
+        imprime("estudasses!")

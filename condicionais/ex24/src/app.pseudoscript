@@ -1,0 +1,33 @@
+modelo Armstrong:
+    construtor():
+        Armstrong.numero = 0
+
+    funcao start():
+        entrada("Digite um numero: ", Armstrong.numero)
+        verificarArmstrong(Armstrong.numero)
+        
+    funcao verificarArmstrong(numero):
+        func_numb1 = 0
+        func_numb2 = 0
+        func_numb3 = 0
+        func_numb4 = 0
+        index = 1
+        resultado = 0
+        equal = false
+
+        enquanto resultado < numero:
+            func_numb1 = index / 100
+            func_numb2 = (index - func_numb1 * 100) / 10
+            func_numb3 = (index - func_numb1 * 100 - func_numb2 * 10)
+            func_numb4 = func_numb1 * func_numb1 * func_numb1 + func_numb2 * func_numb2 * func_numb2 + func_numb3 * func_numb3 * func_numb3
+            resultado = func_numb4
+
+            se resultado == index:
+                equal = true
+
+            index = index + 1
+
+        se equal: 
+            imprime("O numero introduzido " + Armstrong.numero + " é um número de Armstrong.")
+        senao: 
+            imprime("O numero introduzido " + Armstrong.numero + " não é um número de Armstrong.")

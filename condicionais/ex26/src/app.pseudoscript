@@ -1,0 +1,25 @@
+modelo QuadradoPerfeito:
+    construtor():
+        QuadradoPerfeito.numero = 0
+
+    funcao start():
+        entrada("Digite um numero: ", QuadradoPerfeito.numero)
+        verificarQuadradoPerfeito(QuadradoPerfeito.numero)
+        
+    funcao verificarQuadradoPerfeito(numero):
+        index = 1
+        resultado = 0
+        equal = false
+
+        enquanto resultado < numero:
+            resultado = index*index
+
+            se resultado == index:
+                equal = true
+
+            index = index + 1
+
+        se equal: 
+            imprime("O numero introduzido " + Armstrong.numero + " é um número de Armstrong.")
+        senao: 
+            imprime("O numero introduzido " + Armstrong.numero + " não é um número de Armstrong.")

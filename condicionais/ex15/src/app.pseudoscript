@@ -1,0 +1,14 @@
+
+modelo AnoPrimo:
+    construtor():
+        AnoPrimo.ano = 0
+        
+    funcao start():
+        entrada("Digite um ano: ", AnoPrimo.ano)
+        calcularAnoPrimo(AnoPrimo.ano)
+        
+    funcao calcularAnoPrimo(ano):
+        se ano % ano == 0 && ano % 1 == 0:
+            imprime("O ano " + ano + " é Primo.")
+        senao:
+            imprime("O ano " + ano + " não é Primo.")

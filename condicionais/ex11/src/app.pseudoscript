@@ -1,0 +1,22 @@
+
+modelo IMC:
+    construtor():
+        IMC.peso = 0.00
+        IMC.altura = 0.00
+        
+    funcao start():
+        entrada("Digite o seu peso: ", IMC.peso)
+        entrada("Digite a sua altura em metros: ", IMC.altura)
+        verificarIMC(IMC.peso, IMC.altura)
+        
+    #funcao que calcula o imc com o peso e altura introduzios e imprime se está abaixo do peso, no peso normal ou acima do peso.
+
+    funcao verificarIMC(peso,altura):
+        resultado = peso / altura * altura
+
+        se resultado <= 18.5
+            imprime("abaixo do peso")
+        senão resultado > 18.5 && resultado < 25
+            imprime("peso normal")
+        senão resultado >=25
+            imprime("acima do peso")

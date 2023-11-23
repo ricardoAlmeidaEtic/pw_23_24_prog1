@@ -1,0 +1,21 @@
+
+modelo DivisorIdade:
+    construtor():
+        DivisorIdade.idade = 0
+        
+    funcao start():
+        entrada("Digite a sua idade: ", DivisorIdade.idade)
+        verificarDivisorIdade(DivisorIdade.idade)
+        
+    funcao verificarDivisorIdade(idade):
+        se idade < 0 :
+            imprime("A idade introduzida não é válida.")
+        senão:
+            se idade <= 12 :
+                imprime("A idade introduzida indentifica-o como criança.")
+            se idade >= 13 && idade <= 17 :
+                imprime("A idade introduzida indentifica-o como adolescente.")
+            senao idade >= 18 && idade <= 59:
+                imprime("A idade introduzida indentifica-o como adulto.")
+            senao idade >= 60:
+                imprime("A idade introduzida indentifica-o como idoso.")

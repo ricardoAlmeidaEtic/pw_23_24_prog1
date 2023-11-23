@@ -1,0 +1,22 @@
+
+modelo Triangulo:
+    construtor():
+        Triangulo.tamanhoLado1 = 0.00
+        Triangulo.tamanhoLado2 = 0.00
+        Triangulo.tamanhoLado3 = 0.00
+
+    funcao start():
+        entrada("Digite o tamanho do primeiro lado: ", Triangulo.tamanhoLado1)
+        entrada("Digite o tamanho do segundo lado: ", Triangulo.tamanhoLado2)
+        entrada("Digite o tamanho do terceiro lado: ", Triangulo.tamanhoLado3)
+        verificarTriangulo(Triangulo.tamanhoLado1, Triangulo.tamanhoLado2, Triangulo.tamanhoLado3)
+        
+    #funcao que verifica o tipo de triângulo.
+
+    funcao verificarTriangulo(tamanhoLado1,tamanhoLado2,tamanhoLado3):
+        se tamanhoLado1 == tamanhoLado2 && tamanhoLado1 == tamanhoLado3:
+            imprime("O triângulo é equilátero.")
+        senão tamanhoLado1 == tamanhoLado2 || tamanhoLado1 == tamanhoLado3:
+            imprime("O triângulo é isósceles.")
+        senão:
+            imprime("O triângulo é escaleno.")

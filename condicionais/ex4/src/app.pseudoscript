@@ -1,0 +1,28 @@
+
+modelo MaiorMenor:
+    construtor():
+        MaiorMenor.number1 = 0
+        MaiorMenor.number2 = 0
+
+    funcao start():
+        entrada("Digite o primeiro número: ", MaiorMenor.number1)
+        entrada("Digite o segundo número: ", MaiorMenor.number2)
+        numberVerification(MaiorMenor.number1,MaiorMenor.number2)
+        
+    #funcao que verifica qual dos dois números é maior.
+
+    funcao numberVerification(number1,number2):
+        se number1 == number2:
+            imprime("Os dois números são iguais.")
+        senao:
+            se number1 > number2:
+                imprime("O número" + number1 + "é maior que o número " + number2 + ".")
+            se number1 < number2:
+                imprime("O número" + number2 + "é maior que o número " + number1 + ".")
+
+        #_____________________CORREÇÃO___________________
+
+        se number1 > number2:
+            imprime("O número" + number1 + "é maior que o número " + number2 + ".")
+        senao:
+            imprime("O número" + number2 + "é maior que o número " + number1 + ".")
