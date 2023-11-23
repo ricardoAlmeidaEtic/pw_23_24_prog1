@@ -1,0 +1,31 @@
+modelo Despesas:
+    construtor():
+        Despesas.despesas = (
+            'id' -> 0.00
+        )
+
+        Despesas.key = 1
+    
+    funcao start():
+        enquanto Despesas.key != 3:
+            entrada("   1. Registar uma despesa! /n
+                        2. Imprimir lista de projetos! /n
+                        3. Fechar Programa! /n
+                        Selecione uma opção: ", Despesas.key)
+            
+            se Despesas.key == 3
+                return null
+
+            senao Despesas.key == 1
+                entrada("Digite um montante para adicionar: ", montante)
+                Despesas.despesas[Despesas.despesas.chaves().tamanho()+1] = montante
+                
+
+            senao Despesas.key == 2
+                saldoTotal = 0.00
+                cada elemento Despesas.despesas.chaves()
+                    saldoTotal += Despesas.despesas[elemento]
+
+                imprime("O saldo total é: " + saldoTotal)
+
+        

@@ -1,0 +1,37 @@
+modelo Biblioteca:
+    construtor():
+        Biblioteca.listaLivros = (
+            'id' -> (
+                'nome' -> 'textoNome',
+                'estado' -> 0..2 #normal(1), emprestar(1) e devolver livros(2).
+            )
+        )
+
+        Biblioteca:.key = 1
+    
+    funcao start():
+        enquanto Biblioteca.key != 4:
+            entrada("   1. Registar um livro! /n
+                        2. Imprimir lista de livros emprestados! /n
+                        3. Imprimir lista de livros por devolver! /n
+                        4. Fechar Programa! /n
+                        Selecione uma opção: ", Despesas.key)
+            
+            se Biblioteca.key == 4
+                return null
+
+            senao Biblioteca.key == 1
+                entrada("Nome: ", Biblioteca.listaLivros[Biblioteca.listaLivros.chaves().tamanho()+1].nome)
+                entrada("Estado: ", Biblioteca.listaLivros[Biblioteca.listaLivros.chaves().tamanho()+1].estado)
+
+            senao Biblioteca.key == 2
+                imprime("Os livros emprestados são: ")
+                cada elemento Biblioteca.listaLivros.chaves()
+                    se Biblioteca.listaLivros[elemento].estado == 1
+                        imprime(Biblioteca.listaLivros[elemento].nome)
+
+            senao Biblioteca.key == 3
+                imprime("Os livros por devolver são: ")
+                cada elemento Biblioteca.listaLivros.chaves()
+                    se Biblioteca.listaLivros[elemento].estado == 2
+                        imprime(Biblioteca.listaLivros[elemento].nome)
