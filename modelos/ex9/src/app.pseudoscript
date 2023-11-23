@@ -1,30 +1,43 @@
-modelo RankingPontuacao:
-    construtor():
-        RankingPontuacao.listaRankingPontuacao = ('nome' -> '0.00')
-        RankingPontuacao.key = 1
+modelo Inventory:
+
+    construtor(peso, altura):
+        Inventory.items = ('itemName' -> number)
     
     funcao start():
-        enquanto RankingPontuacao.key == 1:
-            entrada("   1. Adicionar um novo ranking! /n
-                        2. Imprimir uma ranking! /n
-                        3. Fechar Programa! /n
-                        Selecione uma opção: ", RankingPontuacao.key)
-            
-            se RankingPontuacao.key == 3
-                return null
+        key = 0
+        equanto key != 4:
+            entrada("   1. Adicionar item /n
+                        2. remover item /n
+                        3. listas items /n
+                        4. Fechar app /n", key)
+                    
+            se key == 1:
 
-            senao RankingPontuacao.key == 1
-                entrada("Digite um nome: ", nome)
-                entrada("Digite o ranking: ", ranking)
+                imprime("A lista de items existentes é: ")
+                cada elemento em Inventory.items.chaves():
+                    imprime(elemento)
 
-                se nome está em RankingPontuacao.listaRankingPontuacao.chaves():
-                    RankingPontuacao.listaRankingPontuacao['nome'] = ranking
-                senao
-                    RankingPontuacao.listaRankingPontuacao.nome = nome
-                    RankingPontuacao.listaRankingPontuacao['nome'] = ranking
-            senao 
-                Imprime("A lista de ranking é: " + RankingPontuacao.listaRankingPontuacao)
+                entrada("Indique qual é o item que quer adicionar", item)
+                entrada("Indique qual é o numero de items quer adicionar", number)
+                Inventory.items[item] += number
 
-        Ranking de Pontuações: Criar um programa que permita ao utilizador inserir nomes e
-        pontuações de jogadores e, em seguida, mostrar um ranking dos jogadores com as
-        melhores pontuações.
+            se key == 2:
+                tempItems = ()
+                    cada elemento em Inventory.items.chaves():
+                        imprime(elemento + "-" + Inventory.items[elemento])
+
+                    entrada("Indique qual é o item que quer remover?", item)
+
+                    se Inventory.items[elemento] != null:
+                        entrada("Indique quantos items quer remover:", number)
+                        Inventory.items[item] -= number
+                    senao:    
+                        imprime("Este Item não existe!")
+                        
+                    
+            se key == 3:
+                cada elemento em Inventory.items.chaves():
+                        imprime(elemento + "-" + Inventory.items[elemento])
+            se key == 4:
+                imprime("O programa fechou")
+                retorna

@@ -29,6 +29,3 @@ modelo Sinonimo:
                     Imprime("O sinonimo dessa palavra é: " + Sinonimo.listaSinonimo['palavra'])
                 senao
                     Imprime("Essa palavra não tem Sinónimo registado!")
-
-        Dicionário de Sinónimos: Criar um programa que forneça sinónimos para palavras
-        fornecidas pelo utilizador. Nota: O aluno deve criar um dicionário de sinónimos.
