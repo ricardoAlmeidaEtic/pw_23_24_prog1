@@ -1,0 +1,19 @@
+
+modelo FindInsideArray:
+    construtor():
+        FindInsideArray.array = [1,2,3,4,5]
+        FindInsideArray.numero = 0
+        FindInsideArray.find = false
+
+    funcao start():
+        entrada("Digite que quer procurar na lista: ", FindInsideArray.numero)
+        doFindInsideArray(FindInsideArray.array, FindInsideArray.numero)
+        
+    funcao doFindInsideArray(lista, numero):
+        cada x em [0..lista.tamanho() - 1]:
+            se lista[x] == numero:
+                imprime("O número " + numero + " está na " + x + "ª posição.")
+                find = true
+
+        se find == false:
+            imprime("O número " + numero + " não está dentro da lista.")

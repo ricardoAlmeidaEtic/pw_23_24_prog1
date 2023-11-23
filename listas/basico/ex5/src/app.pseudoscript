@@ -1,0 +1,6 @@
+modelo AdicionarElemento:
+    construtor():
+        AdicionarElemento.lista = [1,2,3]
+
+    funcao start():
+        AdicionarElemento.lista.add(5)

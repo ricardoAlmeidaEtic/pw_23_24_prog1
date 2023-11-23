@@ -1,0 +1,7 @@
+modelo LerTerceiro:
+    construtor():
+        LerTerceiro.lista = [1,2,3]
+
+    funcao start():
+        terceiro = LerTerceiro.lista[2]
+        

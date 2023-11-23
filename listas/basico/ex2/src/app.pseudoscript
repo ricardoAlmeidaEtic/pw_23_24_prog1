@@ -1,0 +1,20 @@
+modelo ListaNova:
+    construtor():
+        ListaNova.lista = []
+        ListaNova.number = 0
+
+    funcao start():
+        cada numero em [1..5]:
+            entrada("Digite um número: ", ListaNova.number)
+            numberInput(ListaNova.lista, ListaNova.number, numero - 1)
+
+        numberOutput(ListaNova.lista)
+
+    funcao numberInput(lista, numero, posicao):
+        lista[posicao] = numero
+
+    funcao numberOutput(lista):
+        imprime("A lista tem os seguintes elementos:")
+        cada elemento em lista:
+            imprime(elemento)
+        

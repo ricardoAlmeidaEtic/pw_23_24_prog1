@@ -1,0 +1,8 @@
+
+modelo CopiarArrays:
+    construtor():
+        CopiarArrays.listaInicial = [1,2,3]
+        CopiarArrays.listaResultado = []
+        
+    funcao start():
+        CopiarArrays.listaResultado = CopiarArrays.listaInicial

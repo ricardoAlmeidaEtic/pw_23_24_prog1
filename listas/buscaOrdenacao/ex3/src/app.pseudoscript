@@ -1,0 +1,10 @@
+modelo ArrayDecrescente:
+    construtor():
+        ArrayDecrescente.listaInicial = [1,2,3]
+        ArrayDecrescente.listaFinal = []
+
+    funcao start():
+        cada numero em [0..ArrayDecrescente.listaInicial.tamanho() - 1]:
+            cada x em [0..ArrayDecrescente.listaInicial.tamanho() - 1]:
+                ArrayDecrescente.listaInicial[numero] < ArrayDecrescente.listaInicial[x] && ArrayDecrescente.listaInicial[x-1] < ArrayDecrescente.listaInicial[x]
+                    ArrayDecrescente.listaFinal.add(number)

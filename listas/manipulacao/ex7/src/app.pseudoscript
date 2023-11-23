@@ -1,0 +1,12 @@
+modelo MediaArray:
+    construtor():
+        MediaArray.lista = [1,2,3]
+        MediaArray.resultado = 0
+        
+    funcao start():
+        cada numero em [0..MediaArray.lista.tamanho() - 1]:
+            MediaArray.resultado = MediaArray.resultado + MediaArray.lista[numero]
+
+        MediaArray.resultado = MediaArray.resultado / MediaArray.lista.tamanho() 
+
+        imprime("O media dos números do array é: " + MediaArray.resultado)

@@ -1,0 +1,16 @@
+modelo AdicionarElemento:
+    construtor():
+        AdicionarElemento.lista = []
+        AdicionarElemento.number = 0
+        AdicionarElemento.numeroElementos = 0
+
+    funcao start():
+        entrada("Digite um número: ", AdicionarElemento.numeroElementos)
+
+        cada numero em [0..AdicionarElemento.numeroElementos-1]:
+            entrada("Digite um número: ", AdicionarElemento.number)
+            numberInput(AdicionarElemento.lista, AdicionarElemento.number, numero - 1)
+
+    funcao numberInput(lista, numero, posicao):
+        lista[posicao] = numero
+        

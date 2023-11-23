@@ -1,0 +1,6 @@
+modelo RemoverElemento:
+    construtor():
+        RemoverElemento.lista = [1,2,3]
+
+    funcao start():
+        RemoverElemento.lista.removerElemento(RemoverElemento.lista.tamanho()-1)

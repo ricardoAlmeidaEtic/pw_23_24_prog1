@@ -1,0 +1,6 @@
+modelo RepetirElemento:
+    construtor():
+        RepetirElemento.lista = []
+
+    funcao start():
+        RepetirElemento.lista[3,3,3,3,3]

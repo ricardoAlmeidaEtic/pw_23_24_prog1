@@ -1,0 +1,3 @@
+importar src/APP como x
+
+x.start()

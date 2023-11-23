@@ -1,0 +1,11 @@
+modelo MaiorNumeroArray:
+    construtor():
+        MaiorNumeroArray.lista = [1,2,3]
+        MaiorNumeroArray.resultado = 0
+        
+    funcao start():
+        cada numero em [0..MaiorNumeroArray.lista.tamanho() - 1]:
+            se MaiorNumeroArray.lista[numero] > MaiorNumeroArray.resultado:
+                MaiorNumeroArray.resultado = MaiorNumeroArray.lista[numero]
+
+        imprime("O maior número do array é: " + MaiorNumeroArray.resultado)

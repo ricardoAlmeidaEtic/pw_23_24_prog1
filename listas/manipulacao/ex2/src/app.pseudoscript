@@ -1,0 +1,9 @@
+
+modelo ConcatenarArrays:
+    construtor():
+        ConcatenarArrays.lista1 = [1,2,3]
+        ConcatenarArrays.lista2 = [1,2,3]
+        ConcatenarArrays.listaResultado = []
+        
+    funcao start():
+        ConcatenarArrays.listaResultado = ConcatenarArrays.lista1 + ConcatenarArrays.lista2

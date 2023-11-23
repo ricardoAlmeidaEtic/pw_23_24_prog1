@@ -1,0 +1,22 @@
+modelo TrianguloAngulo:
+    construtor():
+        TrianguloAngulo.angulo1 = 0
+        TrianguloAngulo.angulo2 = 0
+        TrianguloAngulo.angulo3 = 0
+
+    funcao start():
+        entrada("Digite a medida do primeiro angulo: ", TrianguloAngulo.angulo1)
+        entrada("Digite a medida do segundo angulo: ", TrianguloAngulo.angulo2)
+        entrada("Digite a medida do terceiro angulo: ", TrianguloAngulo.angulo3)
+
+        verificarTrianguloAngulo(TrianguloAngulo.angulo1,TrianguloAngulo.angulo2,TrianguloAngulo.angulo3)
+        
+    funcao verificarTrianguloAngulo(angulo1,angulo2,angulo3):
+        se angulo1 == 90.0 || angulo2 == 90.0 || angulo3 == 90.0 :
+            imprime("O triangulo introduzido é um triangulo retângulo.")
+
+        senao angulo1 > 90.0 || angulo2 > 90.0 || angulo3 > 90.0:
+            imprime("O triangulo introduzido é um triangulo obtusângulo.")
+            
+        senao angulo1 < 90.0 && angulo2 < 90.0 && angulo3 < 90.0:
+            imprime("O triangulo introduzido é um triangulo acutângulo.")

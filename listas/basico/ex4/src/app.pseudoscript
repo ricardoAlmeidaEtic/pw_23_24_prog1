@@ -1,0 +1,6 @@
+modelo AlterarSegundo:
+    construtor():
+        AlterarSegundo.lista = [1,2,3]
+
+    funcao start():
+        AlterarSegundo.lista[1] = 5

@@ -1,0 +1,6 @@
+modelo Semana:
+    construtor():
+        Semana.lista = []
+
+    funcao start():
+        Semana.lista = ["segunda-feira","terça-feira","quarta-feira","quinta-feira","sexta-feira","sabado","domingo"]

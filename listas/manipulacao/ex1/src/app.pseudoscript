@@ -1,0 +1,13 @@
+
+modelo SomaArray:
+    construtor():
+        SomaArray.lista1 = [1,2,3]
+        SomaArray.lista2 = [1,2,3]
+        SomaArray.listaResultado = []
+        
+    funcao start():
+        calcularSomaArray(SomaArray.lista1,SomaArray.lista2)
+        
+    funcao calcularSomaArray(lista1,lista2):
+        cada numero em [0..lista1.tamanho()-1]:
+            SomaArray.adiciona(lista1[numero] + lista2[numero])

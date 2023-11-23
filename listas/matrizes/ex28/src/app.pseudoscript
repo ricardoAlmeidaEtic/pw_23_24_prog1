@@ -1,0 +1,26 @@
+modelo Mersenne:
+    construtor():
+        Mersenne.numero = 0
+
+    funcao start():
+        entrada("Digite um numero: ", Mersenne.numero)
+        verificarMersenne(Mersenne.numero)
+        
+    funcao verificarMersenne(numero):
+        index = 1
+        resultado = 0
+        equal = false
+        
+        enquanto resultado < numero:
+            se index % index == 0 && index % 1 == 0:
+                resultado = 2 * index – 1
+
+                se resultado == numero:
+                    equal = true
+
+            index = index + 1
+
+        se equal:
+            imprime("O número " + numero + " é Primo de Mersenne.")
+        senao:
+            imprime("O número " + numero + " não é Primo de Mersenne.")

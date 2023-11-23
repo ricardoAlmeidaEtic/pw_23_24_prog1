@@ -1,0 +1,19 @@
+
+modelo ArrayCrescente:
+    construtor():
+        ArrayCrescente.listaInicial = [1,2,3]
+        ArrayCrescente.listaFinal = []
+
+    funcao start():
+        cada numero em [0..ArrayCrescente.listaInicial.tamanho() - 1]:
+            addLower(ArrayCrescente.listaInicial[numero])
+
+    funcao numberInput(number):
+        numero = number
+
+        cada numero em [0..ArrayCrescente.listaInicial.tamanho() - 1]:
+            numero > ArrayCrescente.listaInicial[numero]
+                numero = ArrayCrescente.listaInicial[numero]
+
+        ArrayCrescente.listaFinal.add(numero)
+

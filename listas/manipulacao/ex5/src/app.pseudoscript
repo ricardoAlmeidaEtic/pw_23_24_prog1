@@ -1,0 +1,41 @@
+
+modelo LerDuploArray:
+    construtor():
+        LerDuploArray.lista = [1,2,3]
+        LerDuploArray.duplo = false
+        
+    funcao start():
+        cada numero em [0..LerDuploArray.lista.tamanho() - 1]:
+            checkNumber(LerDuploArray.lista[numero])
+
+        se LerDuploArray.duplo:
+            imprime("Os números repetidos foram removidos da array.")
+        senao:
+            imprime("Não existia números repetidos dentro da array.")
+
+        imprime("A lista final é :" + LerDuploArray.lista)
+            
+
+    funcao checkNumber(number):
+        cada numero em [0..LerDuploArray.lista.tamanho() - 1]:
+            se number == LerDuploArray.lista[numero]:
+                LerDuploArray.lista.remover(numero)
+
+
+    ________________________________________________ correçao
+
+
+    funcao start():
+        mapa = ()
+
+        cada elemento em array:
+            se elemento está em mapa.chaves():
+                mapa[elemento]++
+            senao:
+                mapa[elemento] = 1
+
+        resultado = []
+        cada chave em mapa.chaves():
+            resultado.adiciona(chave)
+        
+        retorna resultado

@@ -1,0 +1,29 @@
+
+modelo InverterArray:
+    construtor():
+        InverterArray.listaInicial = [1,2,3]
+        InverterArray.listaResultado = []
+        
+    funcao start():
+        InverterArray.listaResultado = InverterArray.listaInicial.reversed()
+
+    __________________________________________________________________________ CORREÇÃO
+
+    funcao start():
+        cada index em [InverterArray.listaInicial.tamanho()-1..0]
+            InverterArray.listaResultado.adicionar(InverterArray.listaInicial[index])
+
+        imprime("O array invertido é: ", InverterArray.listaResultado)
+
+        
+    __________________________________________________________________________ CORREÇÃO DA CORREÇÃO
+
+    funcao start():
+        maxIndex = InverterArray.listaInicial.tamanho()-1
+        novalista = []
+
+        enquanto maxIndex >= 0:
+            novalista.adiciona(InverterArray.listaInicial[maxIndex])
+            maxIndex = maxIndex - 1
+        retorna novaLista
+        

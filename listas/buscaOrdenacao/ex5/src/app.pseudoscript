@@ -1,0 +1,14 @@
+
+modelo CustoViagem:
+    construtor():
+        CustoViagem.quilometro = 0
+        
+    funcao start():
+        entrada("Digite um número de quilometros da viagem: ", CustoViagem.quilometro)
+        calcularCustoViagem(CustoViagem.quilometro)
+        
+    funcao calcularCustoViagem(quilometro):
+        resultado = 0.00
+        se quilometro > 0
+            resultado = quilometro * 1.50
+            imprime("O custo de viagem é de " + resultado + ".")

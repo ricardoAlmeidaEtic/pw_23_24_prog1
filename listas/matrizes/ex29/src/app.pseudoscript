@@ -1,0 +1,22 @@
+modelo Fatorial:
+    construtor():
+        Fatorial.numero = 0
+
+    funcao start():
+        entrada("Digite um numero: ", Fatorial.numero)
+        imprimirFatorial(Fatorial.numero)
+        
+    funcao imprimirFatorial(numero):
+        index = 1
+        resultado = "O fatorial do numero " + numero + " é : " + numero + "! = "
+        
+        enquanto numero > 0:
+
+            se numero == 1:
+                resultado = resultado + numero
+            senao:
+                resultado = resultado + numero + " x "
+
+            numero = numero - 1
+
+        imprime(resultado)

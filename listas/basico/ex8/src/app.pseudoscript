@@ -1,0 +1,17 @@
+modelo ListaNova:
+    construtor():
+        ListaNova.lista = [1,2,3]
+        ListaNova.number = 0
+
+    funcao start():
+
+        entrada("Digite um número: ", ListaNova.number)
+        imprime(numberCheck(ListaNova.number))
+
+    funcao numberCheck(numero):
+        cada x em [0..ListaNova.lista.tamanh()-1]:
+            se ListaNova.lista[x] == numero
+                retorna("A lista tem o número:" + numero)
+
+        retorna("A lista não tem o número:" + numero)
+

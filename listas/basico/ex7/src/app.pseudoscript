@@ -1,0 +1,6 @@
+modelo NumeroElementos:
+    construtor():
+        NumeroElementos.lista = [1,2,3]
+
+    funcao start():
+        imprime("A lista tem este número de elementos:" + NumeroElementos.lista.tamanho())
