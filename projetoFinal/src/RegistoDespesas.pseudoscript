@@ -1,0 +1,77 @@
+modelo RegistoDespesas:
+
+    construtor():
+        RegistoDespesas.despesas = (
+            'id' -> 
+            (
+                'montante' -> 0.00,
+                'tipoDespesa' -> true, #tipoDespesa torna-se verdadeiro no caso de ser uma despesa a crédito e false no caso de ser uma despesa a débito.
+                'categoria' -> 'idCategoria', #categoria aloca o id da categoria do mapa "categorias" feito em baixo.
+                'descricao' -> 'textoDescrição'
+            )
+        )
+
+        RegistoDespesas.categorias = (
+            'id' -> 'nome'
+        )
+        
+    funcao registerMenu():
+        tipoDespesa = true
+
+        # Processo registo do montante #
+        entrada("Montante: ", montante)
+        
+        se montante == 0:
+            imprime("O sistema não permite fazer registo de despesas com o valor igual a 0!")
+            imprime("O registo da despesa foi cancelado, foi redirecionado para o menu principal.")
+            retorna
+
+        senao montante > 0.00:
+            tipoDespesa = true
+        senao:
+            tipoDespesa = false
+
+        # Processo registo da categoria #
+        cada categoria em RegistoDespesas.categorias.chaves()
+            imprime(categoria + " - " + RegistoDespesas.categorias[categoria])
+
+        entrada("Categoria: ", categoria)
+
+        se RegistoDespesas.categorias[categoria] == null: 
+            imprime("Essa categoria não se encontra registada no sistema!")
+            imprime("O registo da despesa foi cancelado, foi redirecionado para o menu principal.")
+            retorna
+
+        # Processo registo da descrição #
+        entrada("Descrição: ", descricao)
+
+        #search de um novo id para o registo da nova despesa
+        newId = RegistoDespesas.despesas.chaves().tamanho() + 1
+        
+        #registo da despesa com uma nova chave
+        RegistoDespesas.despesas[newId].montante = montante
+        RegistoDespesas.despesas[newId].categoria = categoria
+        RegistoDespesas.despesas[newId].descricao = descricao
+        RegistoDespesas.despesas[newId].tipoDespesa = tipoDespesa
+
+    funcao removeMenu():
+        cada elemento em RegistoDespesas.despesas.chaves()
+            imprime(elemento + " - " +RegistoDespesas.despesas[elemento])
+
+        entrada("Qual é registo que deseja remover?" ,id)
+
+        se RegistoDespesas.despesas[id] == null: 
+            imprime("Essa despesa não se encontra registada no sistema!")
+            imprime("A remoção da despesa foi cancelada, foi redirecionado para o menu principal.")
+            retorna
+        senao:
+
+            #Mapa de despesas temporario para o processo de remoção da despesa acima selecionada
+            tempDespesas = ()
+
+            cada elemento em RegistoDespesas.despesas.chaves()
+                se elemento != id:
+                    tempDespesas[elemento] = RegistoDespesas.despesas[elemento]
+
+            #As despesas obtem o valor do mapa das despesas temporárias sem a despesa acima selecionada
+            RegistoDespesas.despesas = tempDespesas

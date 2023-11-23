@@ -1,0 +1,32 @@
+importar src/RegistoDespesas como registoDespesas
+importar src/VisualizacaoDespesas como visualizacaoDespesas
+
+registo = registoDespesas.RegistoDespesas()
+actionType = 0
+
+funcao showMenu():
+    imprime("_________________________MENU PRINCIPAL_______________________________")
+    imprime("   1. Adicionar uma despesa /n
+                2. Remover uma despesa /n
+                3. Imprimir as despesas! /n
+                4. Mostrar Menu Principal! /n
+                5. Fechar programa! /n")
+    imprime("____________________________________________________________________")
+
+showMenu()
+
+enquanto actionType != 5:
+    entrada("Selecione uma opção: ", actionType)
+
+    se actionType == 1:
+        registo.registerMenu()
+    senao actionType == 2:
+        registo.removeMenu()
+    senao actionType == 3:
+        visualizacaoDespesas.showMenu()
+    senao actionType == 4:
+        showMenu()
+    senao actionType == 5:
+        imprime("O programa fechou.")
+        retorna
+

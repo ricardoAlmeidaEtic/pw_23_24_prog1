@@ -1,0 +1,101 @@
+funcao showMenu(despesas, categorias):
+    saldoGeral = 0.00
+
+    imprime("_________________________MENU DISPLAY_______________________________")
+    imprime("A) Mostrar lista de despesas por categoria.")
+    imprime("B) Mostrar gráfico de despesas por categoria.")
+    imprime("C) Voltar ao menu principal.")
+    imprime("____________________________________________________________________")
+    entrada("Selecione uma das opções acima: ", key)
+
+    se key == 'a':
+        getDespesasCat(despesas, categorias) 
+    senao key == 'b':
+        getDespesasGraph(despesas, categorias) 
+    senao key == 'c':
+        imprime("A redirecionar para o menu principal.")
+        retorna
+
+funcao getDespesasCat(despesas, categorias):
+    saldoGeral = 0.00
+
+    imprime("____________________________________________________________________")
+
+    cada categoria categorias.chaves()
+        saldoCat = 0.00
+        cada despesa despesas.chaves()
+            se categoria == despesas[despesa].categoria:
+                saldoCat += (despesas[despesa].montante)
+
+        saldoGeral += saldoCat
+        imprime("O saldo da categoria " + categorias[categoria] + "é de: " + saldoCat)
+        imprime("____________________________________________________________________")
+
+    imprime("O saldo global é de: " + saldoGeral)
+
+funcao getDespesasGraph(despesas, categorias):
+    maximo, minimo = carregarExtremos(despesas, categorias)
+
+    imprime("____________________________________________________________________")
+
+    cada categoria categorias.chaves()
+        saldoCat = 0.00
+        barraNegativa = ""
+        barraPositiva = ""
+
+        cada despesa despesas.chaves()
+            se categoria == despesas[despesa].categoria:
+                saldoCat += (despesas[despesa].montante)
+
+        index = 0 #index apontador geral do processo
+        pointer = 0 #pointer apontador gráfico que dá reset a cada limiteBarra
+        limiteBarra = 20 #limite de valor por barra
+
+        se saldoCat > 0.00:
+            enquanto index < saldoCat:
+                se pointer == limiteBarra:
+                    barraPositiva += "#"
+                    pointer = 0 #reset do apontador gráfico
+                senao:
+                    pointer++
+
+                index++
+
+        senao saldoCat < 0.00:
+            enquanto index > minimo:
+                se pointer == limiteBarra:
+                    se index < saldoCat:
+                        barraNegativa += " "
+                    senao:
+                        barraNegativa += "#"
+                    pointer = 0 #reset do apontador gráfico
+                senao:
+                    pointer++
+
+                index--
+        
+        imprime("O saldo da categoria: " + categorias[categoria])
+        #exemplo "         #########| -> -180"
+        imprime(barraNegativa + "|" + barraPositiva + " -> " + saldoCat)
+        imprime("____________________________________________________________________")
+
+    imprime("O saldo global é de: " + saldoGeral)
+
+funcao carregarExtremos(despesas, categorias):
+    maximo = 0.00
+    minimo = 0.00
+
+    cada categoria categorias.chaves()
+        saldoCat = 0.00
+        cada despesa despesas.chaves()
+            se categoria == despesas[despesa].categoria:
+                saldoCat += (despesas[despesa].montante)
+
+        se saldoCat > maximo:
+            maximo = saldoCat
+
+        se saldoCat < minimo:
+            minimo = saldoCat
+
+    retorna maximo, minimo
+    
