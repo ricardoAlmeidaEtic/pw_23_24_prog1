@@ -1,0 +1,18 @@
+modelo MatrizSoma:
+    construtor():
+        MatrizSoma.matriz1 = [1,2,3][1,2,3]
+        MatrizSoma.matriz2 = [1,2,3][1,2,3]
+        MatrizSoma.matriz3 = [1,2,3][1,2,3]
+        
+    funcao start():
+        cada valorx em [1..3]
+            cada valory em [1..3]
+                entrada("Introduza um numero na matriz 1 Cpara a fila {valorx} columna {valory}: " Matriz.matriz1[valorx][valory]);
+        
+        cada valorx em [1..3]
+            cada valory em [1..3]
+                entrada("Introduza um numero na matriz 2 Cpara a fila {valorx} columna {valory}: " Matriz.matriz2[valorx][valory]);
+
+        cada valorx em [1..3]
+            cada valory em [1..3]
+                Matriz.matriz3[valorx][valory] = Matriz.matriz1[valorx][valory] + Matriz.matriz2[valorx][valory]

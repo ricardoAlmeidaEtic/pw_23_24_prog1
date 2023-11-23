@@ -1,0 +1,11 @@
+modelo String:
+    construtor():
+        String.string = "a123"
+        
+    funcao start():
+        cada num em [1..String.string.tamanho()]
+           se String.string[num] != String.string[num+1]
+                imprime("A string não é palindromo")
+                retorna
+
+        imprime("A string é palindromo")

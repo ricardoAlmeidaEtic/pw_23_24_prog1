@@ -1,0 +1,12 @@
+modelo Vogais:
+    construtor():
+        Vogais.string = "a123"
+        Vogais.vogais = ["a","e","i","o","u"]
+        Vogais.numVogais = 0
+        
+    funcao start():
+        cada caracter em Vogais.string
+            se Vogais.vogais.contains(caracter):
+                Vogais.numVogais++
+
+        imprime("A string contem " + Vogais.numVogais + "vogais.")

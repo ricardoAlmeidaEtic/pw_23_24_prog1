@@ -1,0 +1,10 @@
+modelo StringChange:
+    construtor():
+        StringChange.string = "a123"
+        StringChange.array = []
+        
+    funcao start():
+        cada num em [1..StringChange.string.tamanho()]
+            StringChange.array[num] = StringChange.string[num]
+
+        imprime("O array final é: " + StringChange.array)

@@ -1,0 +1,11 @@
+modelo StringChange:
+    construtor():
+        StringChange.string = "a123"
+        
+    funcao start():
+        entrada("introduza a sua ocorrencia: ", ocorrencia)
+        cada num em [1..StringChange.string.tamanho()]
+           se StringChange.string[num] == ocorrencia
+                StringChange.string[num] = ocorrencia
+
+        imprime("A string final é: " + StringChange.string)

@@ -1,0 +1,11 @@
+modelo BuscaBinaria:
+    construtor():
+        BuscaBinaria.listaInicial = [1,2,3]
+        BuscaBinaria.listaFinal = []
+
+    funcao start():
+        entrada("Valor inicial:",inicial)
+        entrada("Valor final:",final)
+        cada numero em BuscaBinaria.listaInicial:
+            se numero > inicial && se numero < inicial
+                imprime("o numero " + numero + "está dentro do espaço definido!")

@@ -1,0 +1,7 @@
+modelo StringTogether:
+    construtor():
+        StringTogether.string = "a123"
+        StringTogether.stringFinal = "a123"
+        
+    funcao start():
+        imprime(StringTogether.string + StringTogether.stringFinal)

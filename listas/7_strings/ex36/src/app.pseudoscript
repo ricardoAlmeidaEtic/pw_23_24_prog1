@@ -1,0 +1,10 @@
+modelo Vogais:
+    construtor():
+        Vogais.string = "a123"
+        Vogais.stringFinal = ""
+        
+    funcao start():
+        cada caracter em Vogais.string
+           Vogais.stringFinal += caracter
+
+        imprime("A string invertida fica: " + Vogais.stringFinal)

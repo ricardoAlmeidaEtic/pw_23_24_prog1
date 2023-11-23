@@ -1,0 +1,15 @@
+
+modelo ArrayOrdenado:
+    construtor():
+        ArrayCrescente.listaInicial = [1,2,3]
+        ArrayCrescente.ordernado = true
+
+    funcao start():
+        cada numero em [0..ArrayCrescente.listaInicial.tamanho() - 1]:
+            se ArrayCrescente.listaInicial[numero] > ArrayCrescente.listaInicial[numero+1]
+                imprime("A lista não é ordenada!")
+                retorna        
+
+        imprime("A lista é ordenada!")
+
+
