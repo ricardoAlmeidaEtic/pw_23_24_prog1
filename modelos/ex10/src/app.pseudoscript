@@ -1,0 +1,34 @@
+modelo Sinonimo:
+    construtor():
+        Sinonimo.listaSinonimo = ('felicidade' -> 'contentamento')
+        Sinonimo.key = 1
+    
+    funcao start():
+        enquanto Sinonimo.key == 1:
+            entrada("   1. Adicionar um novo sinonimo! /n
+                        2. Imprimir um sinonimo! /n
+                        3. Fechar Programa! /n
+                        Selecione uma opção: ", Sinonimo.key)
+            
+            se Sinonimo.key == 3
+                return null
+
+            senao Sinonimo.key == 1
+                entrada("Digite uma palavra: ", palavra)
+                entrada("Digite um sinonimo: ", sinonimo)
+
+                se palavra está em Sinonimo.listaSinonimo.chaves():
+                    Sinonimo.listaSinonimo['palavra'] = sinonimo
+                senao
+                    Sinonimo.listaSinonimo.palavra = palavra
+                    Sinonimo.listaSinonimo['palavra'] = sinonimo
+            senao 
+                entrada("Digite uma palavra: ", palavra)
+
+                se palavra está em Sinonimo.listaSinonimo.chaves():
+                    Imprime("O sinonimo dessa palavra é: " + Sinonimo.listaSinonimo['palavra'])
+                senao
+                    Imprime("Essa palavra não tem Sinónimo registado!")
+
+        Dicionário de Sinónimos: Criar um programa que forneça sinónimos para palavras
+        fornecidas pelo utilizador. Nota: O aluno deve criar um dicionário de sinónimos.

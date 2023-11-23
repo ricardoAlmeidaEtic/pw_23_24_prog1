@@ -1,0 +1,30 @@
+modelo RankingPontuacao:
+    construtor():
+        RankingPontuacao.listaRankingPontuacao = ('nome' -> '0.00')
+        RankingPontuacao.key = 1
+    
+    funcao start():
+        enquanto RankingPontuacao.key == 1:
+            entrada("   1. Adicionar um novo ranking! /n
+                        2. Imprimir uma ranking! /n
+                        3. Fechar Programa! /n
+                        Selecione uma opção: ", RankingPontuacao.key)
+            
+            se RankingPontuacao.key == 3
+                return null
+
+            senao RankingPontuacao.key == 1
+                entrada("Digite um nome: ", nome)
+                entrada("Digite o ranking: ", ranking)
+
+                se nome está em RankingPontuacao.listaRankingPontuacao.chaves():
+                    RankingPontuacao.listaRankingPontuacao['nome'] = ranking
+                senao
+                    RankingPontuacao.listaRankingPontuacao.nome = nome
+                    RankingPontuacao.listaRankingPontuacao['nome'] = ranking
+            senao 
+                Imprime("A lista de ranking é: " + RankingPontuacao.listaRankingPontuacao)
+
+        Ranking de Pontuações: Criar um programa que permita ao utilizador inserir nomes e
+        pontuações de jogadores e, em seguida, mostrar um ranking dos jogadores com as
+        melhores pontuações.

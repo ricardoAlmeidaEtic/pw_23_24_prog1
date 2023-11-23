@@ -1,0 +1,12 @@
+importar src/APP como x
+
+toDoList = x.ToDoList()
+
+enquanto !toDoList.isDone:
+    entrada("   1. Adicionar uma tarefa /n
+                2. Concluir uma tarefa /n
+                3. Imprimir a lista de tarefas ativas! /n
+                4. Fechar programa! /n
+                Selecione uma opção: ", actionType)
+                
+    toDoList.doAction(actionType):

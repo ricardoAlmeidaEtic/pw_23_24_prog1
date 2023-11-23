@@ -1,0 +1,7 @@
+importar src/APP como x
+
+entrada("   1. Inicia o Quiz! /n
+            3. Fechar Programa! /n
+            Selecione uma opção: ", tipo)
+quizGame = x.QuizGame(tipo)
+quizGame.startGame()

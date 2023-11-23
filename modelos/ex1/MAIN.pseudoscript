@@ -1,0 +1,19 @@
+importar src/APP como x
+
+entrada("   1. calcular soma /n
+            2. calcular subtração! /n
+            3. calcular multiplicação! /n
+            4. calcular divisão! /n
+            5. Fechar programa! /n
+            Selecione uma opção: ", tipoCalculo)
+
+entrada("Insira o primeiro número: ", primeiroNumero)
+entrada("Insira o segundo número: ", segundoNumero)
+
+calcularApp = x.CalculatorApp(primeiroNumero,segundoNumero,tipoCalculo)
+resultado = calcularApp.fazerCalculo()
+
+se resultado != null:
+    Imprime("O resultado do calculo introduzido é: " + resultado)
+senao:
+    Imprime("O programa foi fechado corretamente.")

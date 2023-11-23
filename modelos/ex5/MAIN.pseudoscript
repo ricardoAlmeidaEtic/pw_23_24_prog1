@@ -1,0 +1,12 @@
+importar src/APP como x
+
+editor = x.Editor()
+
+enquanto !editor.isDone:
+    entrada("   1. Criar ficheiro /n
+                2. Editar um ficheiro /n
+                3. Imprimir os ficheiros existentes! /n
+                4. Fechar programa! /n
+                Selecione uma opção: ", actionType)
+                
+    editor.doAction(actionType):

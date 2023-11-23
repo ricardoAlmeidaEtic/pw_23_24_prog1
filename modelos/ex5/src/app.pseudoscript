@@ -1,0 +1,34 @@
+modelo Editor:
+    construtor():
+        Editor.ficheiros = ('nome' -> 'texto')
+    
+    funcao doAction(action):
+        se action == 1:
+            entrada("Digite o nome para um novo ficheiro: ", ficheiroNome)
+            entrada("Digite o texto que deseja inserir no texto: ", ficheiroTexto)
+            Editor.tarefas.ficheiroNome = ficheiroTexto
+        senão se action == 2:
+            imprimeFicheiros() 
+            entrada("Digite o nome do ficheiro que quer editar: ", tarefa)
+            contemFicheiro = false
+
+            cada elemento Editor.ficheiros.chaves():
+                se tarefa == elemento
+                    entrada("Digite o texto que quer guardar no ficheiro: ", tarefaTexto)
+                    Editor.tarefas.elemento = tarefaTexto
+                    contemFicheiro = true
+
+            se !contemFicheiro
+                Imprime("O nome do ficheiro que foi introduzido não existe!")    
+
+        senão se action == 3:
+            imprimeFicheiros()
+        senão se action == 4:
+            isDone = true
+
+    funcao imprimeFicheiros():
+        cada elemento Editor.ficheiros.chaves():
+            Imprime("Ficheiro: " + elemento)
+
+        Simple Text Editor: Desenvolva um editor de texto simples que permita ao usuário criar,
+        editar e salvar arquivos de texto.

@@ -1,0 +1,21 @@
+modelo BmiCalculator:
+
+    construtor(peso, altura):
+        BmiCalculator.peso = peso
+        BmiCalculator.altura = altura
+    
+    funcao calculaBMI():
+        resultado = BmiCalculator.peso / (BmiCalculator.altura * BmiCalculator.altura)
+
+        se resultado <18.5:
+            imprime("Underweight")
+        senão resultado >= 18.5 && resultado < 25:
+            imprime("Normal weight")
+        senão resultado >= 25 && resultado <= 29.9:
+            imprime("Overweight")
+        senão se resultado >= 30:
+            imprime("Obesity")
+
+    BMI Calculator: Crie um programa que calcule o índice de massa corporal (BMI) com base
+    no peso e na altura do usuário. O programa deve indicar em qual faixa de BMI o usuário se
+    encontra.

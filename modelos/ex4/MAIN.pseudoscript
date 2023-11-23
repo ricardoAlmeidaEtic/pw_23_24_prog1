@@ -1,0 +1,5 @@
+importar src/APP como x
+
+converter = x.Converter()
+entrada("Digite a temperatura em celsius para converter: ", temperaturaCelsius)
+imprime("A temperatura convertida para Fahrenheit é: " + converter.converterTemperatura(temperaturaCelsius))

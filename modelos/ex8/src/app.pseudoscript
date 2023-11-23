@@ -1,0 +1,54 @@
+modelo QuizGame:
+    construtor(tipo):
+        QuizGame.listaQuizGame = (
+            'pergunta1' -> 
+            (
+                'resposta1' -> false,
+                'resposta2' -> true,
+                'resposta3' -> false,
+                'resposta4' -> false
+            ),
+            'pergunta2' -> 
+            (
+                'resposta1' -> false,
+                'resposta2' -> false,
+                'resposta3' -> true,
+                'resposta4' -> false
+            ),
+            ...
+        )
+
+        QuizGame.tipo = tipo
+    
+    funcao startGame():
+        se QuizGame.key == 2:
+            return null
+
+        senao QuizGame.key == 1:
+            index_x = 1
+            respostasCorretas = 0
+            cada pergunta QuizGame.listaQuizGame.chaves():
+                Imprime(pergunta)
+                index_y = 0
+                correto = 0
+                cada hipotese QuizGame.listaQuizGame.pergunta.chaves():
+                    Imprime((index_y+1) + "ª pergunta: " + hipotese)
+                    se QuizGame.listaQuizGame.pergunta[hipotese]
+                        correto = index_y
+                    index_y++
+
+                entrada("Qual é a opção correta? - ",respostaUser)
+                resultado = "A opção escolhida está errada!"
+                se correto == respostaUser
+                    resultado = "A opção escolhida está certa!"
+                    respostasCorretas++
+                
+                imprime(resultado)
+
+            index_x++
+
+            imprime("Acertou " + respostasCorretas + " de " + index_x + " perguntas.")
+
+        Simple Quiz Game: Crie um jogo de quiz com perguntas de múltipla escolha. O programa
+        deve rastrear a pontuação do jogador e fornecer feedback sobre as respostas corretas ou
+        incorretas.

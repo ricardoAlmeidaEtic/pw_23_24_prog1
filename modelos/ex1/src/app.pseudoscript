@@ -1,0 +1,26 @@
+modelo CalculatorApp:
+    construtor(primeiroNumero,segundoNumero,tipoCalculo):
+        CalculatorApp.primeiroNumero = primeiroNumero
+        CalculatorApp.segundoNumero = segundoNumero
+        CalculatorApp.tipoCalculo = tipoCalculo
+    
+    funcao fazerCalculo():
+        resultado = 0
+
+        se CalculatorApp.tipoCalculo == 5:
+            return null:
+
+        senao CalculatorApp.tipoCalculo == 1:
+            resultado = primeiroNumero + segundoNumero
+        senao CalculatorApp.tipoCalculo == 2:
+            resultado = primeiroNumero - segundoNumero
+        senao CalculatorApp.tipoCalculo == 3:
+            resultado = primeiroNumero * segundoNumero
+        senao CalculatorApp.tipoCalculo == 4:
+            resultado = primeiroNumero / segundoNumero
+
+        retorna resultado
+            
+
+        #Calculator App: Crie um programa que simule uma calculadora básica, permitindo a entrada
+        #de dois números e realizando operações de adição, subtração, multiplicação e divisão.

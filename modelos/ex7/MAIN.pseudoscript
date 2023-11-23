@@ -1,0 +1,11 @@
+importar src/APP como x
+
+
+
+entrada("   1. Converter de euro para dolar. /n
+            2. Converter de dolar para euro. /n
+            3. Fechar programa! /n
+            Selecione uma opção: ", actionType)
+entrada("Digite a quantia de dinheiro que quer converter: ", tipo)
+converterMoeda = x.ConverterMoeda(quantidade,tipo)
+Imprime("A quantia convertida resulta em: " + converterMoeda.doConvert())

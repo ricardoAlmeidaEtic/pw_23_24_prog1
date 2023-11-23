@@ -1,0 +1,24 @@
+modelo ToDoList:
+    construtor():
+        ToDoList.tarefas = ('tarefa1' -> 1..2) #1 == ativa, 2  == concluida
+        ToDoList.isDone = false    
+    funcao doAction(action):
+        se action == 1:
+            entrada("Digite uma tarefa nova para a lista: ", tarefa)
+            ToDoList.tarefas[tarefa] = 1
+        senão se action == 2:
+            imprimeTarefasAtivas() 
+            entrada("Digite qual tarefa quer concluir: ", tarefa)
+            ToDoList.tarefas[tarefa] = 2
+        senão se action == 3:
+            imprimeTarefasAtivas()
+        senão se action == 4:
+            ToDoList.isDone = true
+
+    funcao imprimeTarefasAtivas():
+        cada elemento ToDoList.tarefas.chaves():
+            se ToDoList.tarefas[elemento] == 1:
+                Imprime("Tarefa: " + elemento)
+
+    To-Do List: Crie uma aplicação de lista de tarefas. O programa deve permitir adicionar
+    tarefas, marcar tarefas como concluídas e listar as tarefas pendentes.

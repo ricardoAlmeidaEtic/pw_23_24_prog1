@@ -1,0 +1,12 @@
+modelo Converter:
+    
+    construtor(temperaturaCelsius):
+        Converter.temperaturaCelsius = temperaturaCelsius
+    
+    funcao converterTemperatura():
+        temperaturaFahrenheit = (temperaturaCelsius * 9/5) + 32
+        return temperaturaFahrenheit
+
+        Temperature Converter: Faça um conversor de temperatura que permita ao usuário
+        converter entre Celsius e Fahrenheit. O programa deve aceitar uma entrada de temperatura e
+        realizar a conversão.

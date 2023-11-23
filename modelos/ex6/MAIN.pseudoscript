@@ -1,0 +1,7 @@
+importar src/APP como x
+
+bmiCalculator = x.BmiCalculator()
+
+entrada("Digite o peso: ", peso)
+entrada("Digite a altura: ", altura )
+bmiCalculator.calculaBMI(actionType):

@@ -1,0 +1,20 @@
+modelo ConverterMoeda:
+    construtor(quantidade, tipo):
+        ConverterMoeda.quantidade = quantidade
+        ConverterMoeda.tipo = tipo
+    
+    funcao doConvert():
+        resultado = 0.00
+
+        se ConverterMoeda.tipo == 3
+            return null
+
+        senao ConverterMoeda.tipo == 1
+            resultado = ConverterMoeda.quantia * 1,07;
+        senao:
+            resultado = ConverterMoeda.quantia * 0,93;
+
+        return resultado
+s
+    Currency Converter: Desenvolva um conversor de moeda que permita ao usuário converter
+    entre diferentes moedas, fornecendo taxas de câmbio atualizadas.

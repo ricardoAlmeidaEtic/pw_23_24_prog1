@@ -1,0 +1,20 @@
+modelo GuessTheNumber:
+    construtor(number):
+        GuessTheNumber.number = number
+        GuessTheNumber.close = false
+    
+    funcao checkNumber(newNumber):
+        se newNumber == 'close':
+            Imprime("O programa terminou!")    
+            GuessTheNumber.close = true
+        senão newNumber == GuessTheNumber.number:
+            Imprime("O número introduzido é igual ao número gerado, parabéns!")    
+            GuessTheNumber.close = true
+        senão newNumber > GuessTheNumber.number:
+            Imprime("O número introduzido é maior que o número gerado, tente novamente!")    
+        senão newNumber < GuessTheNumber.number:
+            Imprime("O número introduzido é menor que o número gerado, tente novamente!")    
+
+        #Guess the Number: Desenvolva um jogo em que o computador escolhe um número
+        #aleatório e o jogador tenta adivinhar qual é. O programa deve fornecer dicas para indicar se o
+        #palpite está muito alto ou muito baixo.
