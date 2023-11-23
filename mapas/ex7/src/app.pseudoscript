@@ -1,0 +1,28 @@
+modelo AgendaCompromissos:
+    construtor():
+        AgendaCompromissos.agenda = ('compromisso' -> 'dd/mm/aaaa')
+        AgendaCompromissos.key = 1
+    
+    funcao start():
+        enquanto AgendaCompromissos.key == 1:
+            entrada("   1. Adicionar compromisso a agenda! /n
+                        2. Imprimir agenda! /n
+                        3. Fechar Programa! /n
+                        Selecione uma opção: ", AgendaCompromissos.key)
+            
+            se AgendaCompromissos.key == 3
+                return null
+
+            senao AgendaCompromissos.key == 1
+                entrada("Digite o compromisso: ", compromisso)
+
+                se compromisso está em AgendaCompromissos.agenda.chaves():
+                    Imprime("Esse compromisso já está registado na agenda")
+                senao:
+                    entrada("Digite a data para o compromisso: ", data)
+                    AgendaCompromissos.agenda[compromisso] = data
+            senao:
+                Imprime("A agenda está registada da seguinte forma: " +  AgendaCompromissos.agenda)
+
+        Agenda de Compromissos: Criar um programa que permita ao utilizador agendar
+        compromissos e a sua ordem. O programa deve mostrar os compromissos ordenados

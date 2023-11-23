@@ -1,0 +1,24 @@
+modelo CalculadoraMedia:
+    construtor():
+        CalculadoraMedia.notas = ()
+        CalculadoraMedia.numeroNotas = 0
+        CalculadoraMedia.mediaNotas = 0
+    
+    
+    funcao start():
+        index = 1
+        entrada("Digite o número de notas: ", AgendaContatos.numeroNotas)
+        enquanto index <= AgendaContatos.numeroNotas
+            entrada("Digite a " + index + "ª nota: ", nota)
+            CalculadoraMedia.notas.nota = nota
+
+        cada elemento CalculadoraMedia.notas.valores():
+            CalculadoraMedia.mediaNotas = CalculadoraMedia.mediaNotas + elemento
+
+        CalculadoraMedia.mediaNotas = CalculadoraMedia.mediaNotas / CalculadoraMedia.notas.chaves.tamanho()
+
+        Imprime("A media das notas é: " +  CalculadoraMedia.mediaNotas)
+
+        Calculadora de Médias: Criar um programa que calcule a média de notas fornecidas
+        pelo utilizador para vários alunos. Nota: Deve questionar o utilizador de todas as
+        inserções necessárias.

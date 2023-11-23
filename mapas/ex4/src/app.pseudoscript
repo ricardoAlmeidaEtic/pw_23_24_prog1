@@ -1,0 +1,42 @@
+modelo GestaoStock:
+    construtor():
+        GestaoStock.stock = ()
+        GestaoStock.key = 1
+    
+    funcao start():
+        enquanto GestaoStock.key == 1:
+            entrada("   1. Adicionar produto ao stock! /n
+                        2. Remover produto ao stock! /n
+                        3. Imprimir stock de produtos! /n
+                        Selecione uma opção: ", GestaoStock.key)
+            
+            se GestaoStock.key == 1
+                entrada("Digite o produto: ", produto)
+                entrada("Digite o numero do produto: ", stock)
+                GestaoStock.stock.produto = produto
+                GestaoStock.stock.stock = stock
+
+                se produto está em GestaoStock.stock:
+                    GestaoStock.stock[produto] = GestaoStock.stock[produto] + stock
+                senao:
+                    GestaoStock.stock[produto] = stock
+
+            
+            se GestaoStock.key == 2
+                entrada("Digite o produto: ", produto)
+                entrada("Digite quanto stock quer remover do produto: ", stock)
+                GestaoStock.stock.produto = produto
+                GestaoStock.stock.stock = stock
+
+                se produto está em GestaoStock.stock:
+                    GestaoStock.stock[produto] = GestaoStock.stock[produto] - stock
+
+                    se produto está em GestaoStock.stock <= 0:
+                        GestaoStock.stock[produto].delete()
+
+            senao 
+                Imprime("A lista de stock é: " +  FrequenciaLetras.stock)
+
+        Gestão de Stock: Criar um programa que faça a gestão de stock de produtos. O
+        utilizador deve ser capaz de adicionar e remover produtos ao stock. Nota: O aluno
+        deve criar opções para adicionar e remover produtos.

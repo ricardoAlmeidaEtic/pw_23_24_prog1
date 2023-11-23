@@ -1,0 +1,18 @@
+modelo FrequenciaLetras:
+    construtor():
+        FrequenciaLetras.frequencia = ()
+        FrequenciaLetras.frase = ""
+    
+    
+    funcao start():
+        entrada("Digite uma frase: ", AgendaContatos.frase)
+        cada elemento AgendaContatos.frase:         
+            se elemento está em FrequenciaLetras.frequencia.chaves():
+                FrequenciaLetras.frequencia[elemento]++
+            senao:
+                FrequenciaLetras.frequencia[elemento] = 1
+
+        Imprime("A lista de frequencia é: " +  FrequenciaLetras.frequencia)
+
+        Contagem de Letras: Criar um programa que conte a frequência de letras em uma
+        frase fornecida pelo utilizador. Nota: O utilizador deve fazer a inserção da frase.

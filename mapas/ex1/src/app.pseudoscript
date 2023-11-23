@@ -1,0 +1,22 @@
+modelo AgendaContatos:
+    construtor():
+        AgendaContatos.agenda = ()
+        AgendaContatos.key = 1
+    
+    funcao start():
+        enquanto AgendaContatos.key == 1:
+            entrada("   1. Adicionar Contacto! /n
+                        2. Parar de adicionar Contacto! /n
+                        Selecione uma opção: ", AgendaContatos.key)
+
+            se AgendaContatos.key == 2
+                return null:
+
+            senao 
+                entrada("Digite o número telefone: ", AgendaContatos.agenda.telefone)
+                entrada("Digite o nome: ", AgendaContatos.agenda[telefone])
+                
+
+        Agenda de Contatos: Deve criar um programa que permita ao utilizador adicionar
+        nomes e números de telefone a uma agenda de contatos. Nota: Deve criar um menu
+        para adicionar contatos.

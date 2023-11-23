@@ -1,0 +1,41 @@
+modelo DataNascimento:
+    construtor():
+        DataNascimento.listaDataNascimento = ('nome' -> 'dd/mm/aaaa')
+        DataNascimento.key = 1
+    
+    funcao start():
+        enquanto DataNascimento.key == 1:
+            entrada("   1. Adicionar data a lista! /n
+                        2. Imprimir uma idade! /n
+                        3. Fechar Programa! /n
+                        Selecione uma opção: ", DataNascimento.key)
+            
+            se DataNascimento.key == 3
+                return null
+
+            senao DataNascimento.key == 1
+                entrada("Digite um nome: ", nome)
+                entrada("Digite uma Data Nascimento: ", data)
+
+                se nome está em DataNascimento.agenda.chaves():
+                    Imprime("Essa pessoa já está registada na lista!")
+                senao
+                    entrada("Digite a nome para a lista: ", DataNascimento.listaDataNascimento.nome) 
+                    entrada("Digite a data de nascimento: ", DataNascimento.listaDataNascimento['nome'])
+            senao 
+                entrada("Digite um nome: ", nome)
+
+                se nome está em DataNascimento.agenda.chaves():
+                    data = DataNascimento.agenda[nome]
+                    dataAtual = date.today()
+                    idade = dataAtual.year - data.year -
+                            ((dataAtual.month, dataAtual.day) <
+                            (data.month, data.day))
+
+                    Imprime("A pessoa " + nome + " tem " + idade + " anos.")
+                senao
+                    Imprime("Essa pessoa não está registada na lista!")
+
+        Calculadora de Idade: Criar um programa que calcule a idade de várias pessoas com
+        base no seu ano de nascimento. Nota: O aluno deve solicitar o ano de nascimento ao
+        utilizador.

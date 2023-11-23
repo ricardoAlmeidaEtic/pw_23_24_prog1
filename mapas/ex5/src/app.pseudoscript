@@ -1,0 +1,16 @@
+modelo Dicionario:
+    construtor():
+        Dicionario.palavras = ('ola' -> 'hello')
+        Dicionario.palavra = ""
+    
+    funcao start():
+        cada elemento Dicionario.palavras.chaves():
+            entrada("Escreva uma das palavras para traduzir", Dicionario.palavra)
+            
+        cada elemento Dicionario.palavras.chaves():
+            se elemento == Dicionario.palavra 
+                Imprime("A tradução é: " + Dicionario.palavras[elemento])
+
+        Tradutor Simples: Criar um dicionário com algumas palavras em um idioma e suas
+        traduções. O utilizador deve fornecer uma palavra e o programa deve traduzi-la. Nota:
+        O aluno deve criar um dicionário de traduções e solicitar a palavra ao utilizador.

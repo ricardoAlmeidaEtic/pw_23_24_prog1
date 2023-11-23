@@ -1,0 +1,63 @@
+modelo GerirProjetos:
+    construtor():
+        GerirProjetos.listaProjetos = (
+            'nome' -> (
+                'descrição' -> 'descrição',
+                'tarefas' -> []
+            )
+        )
+
+        GerirProjetos.listaTarefas = (
+            'tarefaOtimizar' -> 'Otimizar computadores da sala x'
+        )
+
+        GerirProjetos.key = 1
+    
+    funcao start():
+        enquanto GerirProjetos.key == 1:
+            entrada("   1. Gerir um projeto! /n
+                        2. Imprimir lista de projetos! /n
+                        3. Fechar Programa! /n
+                        Selecione uma opção: ", GerirProjetos.key)
+            
+            se GerirProjetos.key == 3
+                return null
+
+            senao GerirProjetos.key == 1
+                entrada("Digite um projeto para gerir: ", projeto)
+
+                se projeto está em GerirProjetos.listaProjetos.chaves():
+                    entrada("   1. Defenir nome do projeto! /n
+                        2. Defenir descrição do projeto! /n
+                        3. Defenir tarefa para o projeto! /n
+                        4. Fechar Programa! /n
+                        Selecione uma opção: ", GerirProjetos.key)
+
+                    se GerirProjetos.key == 4
+                        return null
+                    se GerirProjetos.key == 1
+                        entrada("Digite um novo nome para o projeto: ", projetoNovo)
+                        GerirProjetos.listaProjetos.projeto = projetoNovo
+                    se GerirProjetos.key == 2
+                        entrada("Digite um novo nome para o projeto: ", projetoDesc)
+                        GerirProjetos.listaProjetos[projeto] = projetoDesc
+                    se GerirProjetos.key == 3
+                        Imprime("A lista de tarefas existentes é: ")
+                        Cada elemento GerirProjetos.listaTarefas.chaves():
+                            Imprime("Tarefa -  " + elemento)
+
+                        entrada("Digite qual tarefa deseja definir para este projeto: ", projetoTarefa)
+                        
+                        se projetoTarefa está em GerirProjetos.listaTarefas.chaves():
+                            GerirProjetos.listaProjetos.projetoTarefa['tarefas'].add(projetoTarefa)
+                        senao 
+                            Imprime("Tarefa " + projetoTarefa + " é inexistente na lista de tarefas.")
+
+                senao 
+                    Imprime("Projeto " + projeto + " é inexistente na lista de projetos.")
+
+            senao GerirProjetos.key == 2
+                Imprime("A lista de projetos é: " + GerirProjetos.listaProjetos)
+
+        Gestão de Projetos: Criar um programa que permita ao utilizador gerir projetos. Cada
+        projeto deve ter um nome, uma descrição e uma lista de tarefas.

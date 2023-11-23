@@ -1,0 +1,74 @@
+modelo ReservasViagens:
+    construtor():
+        ReservasViagens.listaReservas = (
+            'nome' -> (
+                'voo' -> 'descrição',
+                'hotel' -> [...],
+                'carro' -> [...]
+            )
+        )
+
+        ReservasViagens.listaVoos = (
+            'empresaVoo' -> 'duração voo'
+        )
+
+        ReservasViagens.listaHoteis = (
+            'nomeHotel' -> 'descrição hotel'
+        )
+
+        ReservasViagens.listaCarros = (
+            'carro' -> 'modelo'
+        )
+
+        ReservasViagens.key = 1
+    
+    funcao start():
+        enquanto ReservasViagens.key == 1:
+            entrada("   1. Gerir um projeto! /n
+                        2. Imprimir lista de projetos! /n
+                        3. Fechar Programa! /n
+                        Selecione uma opção: ", ReservasViagens.key)
+            
+            se ReservasViagens.key == 3
+                return null
+
+            senao ReservasViagens.key == 1
+                entrada("Digite um projeto para gerir: ", projeto)
+
+                se projeto está em ReservasViagens.listaProjetos.chaves():
+                    entrada("   1. Defenir nome do projeto! /n
+                        2. Defenir descrição do projeto! /n
+                        3. Defenir tarefa para o projeto! /n
+                        4. Fechar Programa! /n
+                        Selecione uma opção: ", ReservasViagens.key)
+
+                    se ReservasViagens.key == 4
+                        return null
+                    se ReservasViagens.key == 1
+                        entrada("Digite um novo nome para o projeto: ", projetoNovo)
+                        ReservasViagens.listaProjetos.projeto = projetoNovo
+                    se ReservasViagens.key == 2
+                        entrada("Digite um novo nome para o projeto: ", projetoDesc)
+                        ReservasViagens.listaProjetos[projeto] = projetoDesc
+                    se ReservasViagens.key == 3
+                        Imprime("A lista de tarefas existentes é: ")
+                        Cada elemento ReservasViagens.listaTarefas.chaves():
+                            Imprime("Tarefa -  " + elemento)
+
+                        entrada("Digite qual tarefa deseja definir para este projeto: ", projetoTarefa)
+                        
+                        se projetoTarefa está em ReservasViagens.listaTarefas.chaves():
+                            ReservasViagens.listaProjetos['tarefas'].add(projetoTarefa)                        #DUVIDA JORGE - RELACAO TAREFAS - PROJETOS
+                        senao 
+                            Imprime("Tarefa " + projetoTarefa + " é inexistente na lista de tarefas.")
+
+                senao 
+                    Imprime("Projeto " + projeto + " é inexistente na lista de projetos.")
+
+            senao ReservasViagens.key == 2
+                Imprime("A lista de projetos é: " + ReservasViagens.listaProjetos)
+
+        Sistema de Reservas de Viagens: Criar um programa que permita ao utilizador
+        reservar voos, hotéis e alugar carros para uma viagem. Nota: O aluno deve criar
+        estruturas para representar voos, hotéis e carros e permitir que o usuário faça
+        reservas.

@@ -1,0 +1,33 @@
+modelo RegistoCompras:
+    construtor():
+        RegistoCompras.listaProdutos = ('produto' -> '0.00')
+        RegistoCompras.registoCompras = ('produto' -> '0.00')
+        GestaoStock.key = 1
+    
+    funcao start():
+        enquanto RegistoCompras.key == 1:
+            Imprime("A lista de produtos disponiveis: " + RegistoCompras.listaProdutos)
+            entrada("   1. Adicionar produto ao registo! /n
+                        2. Imprimir registo de compras! /n
+                        3. Fechar Programa! /n
+                        Selecione uma opção: ", GestaoStock.key)
+            
+            se GestaoStock.key == 3
+                return null
+
+            se GestaoStock.key == 1
+                entrada("Digite o produto: ", produto)
+
+                se produto está em GestaoStock.listaProdutos.chaves():
+                    se produto está em GestaoStock.registoCompras.chaves():
+                        RegistoCompras.registoCompras[produto] = RegistoCompras.registoCompras[produto] + RegistoCompras.listaProdutos[produto]
+                    senao:
+                        RegistoCompras.registoCompras[produto] = RegistoCompras.listaProdutos[produto]
+                senao 
+                    Imprime("O produto " +  produto + "não faz parte da lista de produtos disponiveis.")
+            senao 
+                Imprime("A lista de stock é: " +  RegistoCompras.registoCompras)
+
+        Registo de Compras: Criar um programa que permita ao utilizador registar suas
+        compras, associando produtos e preços. O programa deve calcular o total das
+        compras. Nota: O aluno deve criar um loop para permitir várias entradas de compras.
